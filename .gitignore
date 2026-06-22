@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# Datos generados en tiempo de ejecucion (se regeneran solos)
+productos.txt
+tarjetas.txt
+reporte_ventas.txt
+*.png
