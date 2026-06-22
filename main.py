@@ -300,6 +300,8 @@ def main():
     # Intentar cargar localmente. Si no existe, creamos la base pre-llenada requerida
     if not os.path.exists(controlador.archivo_productos):
         inicializar_inventario_defecto(controlador)
+        # Las tarjetas se crean/cargan aparte, no las genera el inventario por defecto
+        controlador.cargar_tarjetas()
     else:
         controlador.cargar_datos_locales()
         

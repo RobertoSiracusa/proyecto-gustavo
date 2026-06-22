@@ -49,7 +49,14 @@ class InventarioControlador:
         else:
             print("[Aviso] Archivo local de productos no encontrado. Maquina vacia.")
 
-        # Cargar Tarjetas Locales por si acaso, aunque el enunciado pide contrastar con el repositorio
+        self.cargar_tarjetas()
+
+    def cargar_tarjetas(self):
+        """
+        Garantiza que las tarjetas esten disponibles en memoria.
+        Si no existe el archivo local, lo crea con las tarjetas de prueba.
+        Debe llamarse en cada arranque, exista o no inventario previo.
+        """
         # Inicializamos los hashes conocidos con saldos base si no existe archivo
         if not os.path.exists(self.archivo_tarjetas):
             # Hashes SHA-256 fijos de los numeros de tarjeta de prueba.
